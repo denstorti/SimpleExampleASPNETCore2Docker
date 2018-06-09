@@ -2,7 +2,8 @@
 Simple Example ASPNET Core 2 Web API  with SQL Server, both running on Docker.
 
 ## Pre-requisites
-* Docker installed
+* A machine (Windows or Linux or Azure VM) with Docker installed
+* If you want to debug the code you can use Visual Studio (2017+)
 
 ## Running
 1. After cloning, in the main folder execute:
@@ -27,7 +28,7 @@ I did it to ease the F5 (smile) effect.
 
 ## API structure (simple examples)
  
- ### See swagger docs: http://localhost:9090/swagger
+#### See swagger docs: http://localhost:9090/swagger
 
 curl -X GET "http://localhost:9090/api/v1/public/products" -H "accept: application/json"
 
