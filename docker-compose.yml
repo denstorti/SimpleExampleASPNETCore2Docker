@@ -1,0 +1,37 @@
+version: '3.4'
+
+services:
+  sql.data:
+    image: microsoft/mssql-server-linux:latest
+    container_name: sql.data
+    environment:
+      ACCEPT_EULA: 'Y' 
+      SA_PASSWORD: 'Testing123'
+    ports:
+        - "5433:1433"
+    volumes:
+      - sqldata:/var/opt/mssql
+    networks: 
+        - isolated_network
+    
+  devstore.api:
+    image: ${DOCKER_REGISTRY}devstoreapi
+    container_name: devstoreapi
+    build:
+      context: .
+      dockerfile: DevStore.Api/Dockerfile
+    environment:
+      CONNECTION_STRING: "Server=sql.data;Database=DevStore;User Id=sa;Password=Testing123"
+    depends_on:
+      - sql.data
+    ports:
+      - "9090:80"
+    networks: 
+        - isolated_network
+    
+
+volumes:
+  sqldata:
+
+networks:
+  isolated_network:
