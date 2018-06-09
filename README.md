@@ -12,13 +12,22 @@ docker-compose up
 3. Test it:
 Call one of the APIs: http://localhost:9090/api/v1/public/products
 
-### Problems
+### Problems Running
 If you have problems running "docker-compose up" because there is already volumes, networks or containers with the same name, you can solve this by running "docker system prune". 
 Be aware that several artifacts will be dropped, use only with nothing else created on Docker matters.
 
+## Debugging
+You can also open the solution on Visual Studio (2017+).
+
+When you debug the solution it will use InMemoryDatabase because the env var ASPNETCORE_ENVIRONMENT will be set to "Development".
+
+When you run the project "docker-compose" or run the command "docker-compose up" the env var ASPNETCORE_ENVIRONMENT will be set to "Production" and use SQL Server.
+
+I did it to ease the F5 (smile) effect.
+
 ## API structure (simple examples)
-See swagger docs:
-http://localhost:9090/swagger/v1/public/
+ 
+ ### See swagger docs: http://localhost:9090/swagger
 
 curl -X GET "http://localhost:9090/api/v1/public/products" -H "accept: application/json"
 
