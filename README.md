@@ -1,6 +1,12 @@
 # ASPNET Core 2 (Docker) + MSSQL Linux (Docker)
 Simple Example ASPNET Core 2 Web API  with SQL Server, both running on Docker.
 
+Some basic principles of DDD were applied, you can see the Domain layer designed as POCO classes, all the Infrastructure in a new project (including all the migrations of EF Core) and the application layer that is the web api.
+
+No repository, unit of work, testing or other patterns were applied. Keep it simple.
+
+To see more advanced and complex examples see [eShopContainers](https://github.com/dotnet-architecture/eShopOnContainers/).
+
 ![IMAGE ALT TEXT HERE](/docs/solution.png)
 
 ## Pre-requisites
@@ -15,7 +21,7 @@ docker-compose up
 3. Test it:
 Call one of the APIs: http://localhost:9090/api/v1/public/products
 
-### Problems Running
+Problems Running: 
 If you have problems running "docker-compose up" because there is already volumes, networks or containers with the same name, you can solve this by running "docker system prune". 
 Be aware that several artifacts will be dropped, use only with nothing else created on Docker matters.
 
