@@ -10,7 +10,7 @@ To see more advanced and complex examples see [eShopContainers](https://github.c
 ![IMAGE ALT TEXT HERE](/docs/solution.png)
 
 ## Pre-requisites
-* A machine (Windows or Linux or Azure VM) with Docker installed
+* A machine (Windows or Linux or Azure VM) with Docker installed (or you can user a VM with Docker installed)
 * If you want to debug the code you can use Visual Studio (2017+)
 
 ## Running
